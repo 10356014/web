@@ -18,6 +18,8 @@ connection.connect(function(err) {
 //---------------------------------
 module.exports = connection;
 */
+
+
 var mysql = require('mysql');
 
 //------------------------
@@ -27,7 +29,7 @@ var pool  = mysql.createPool({
     user: 'root',
     password: 'mysql',
     host: '127.0.0.1',
-    database: 'north', 
+    database: 'project', 
     waitForConnections : true, 
     connectionLimit : 10       
 });

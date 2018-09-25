@@ -9,11 +9,11 @@ var pool = require('./lib/db.js');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-    pool.query('select * from product', function (error, results, fields) {
+    pool.query('select * from store', function (error, results, fields) {
         if (error){
-            res.render('productList', {items:[]});
+            res.render('storeList', {items:[]});
         }else{
-            res.render('productList', {items:results});
+            res.render('storeList', {items:results});
         }       
     });
 });

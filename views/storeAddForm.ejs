@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="description" content="Vali is a responsive and free admin theme built with Bootstrap 4, SASS and PUG.js. It's fully customizable and modular.">
+    <!-- Twitter meta-->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:site" content="@pratikborsadiya">
+    <meta property="twitter:creator" content="@pratikborsadiya">
+    <!-- Open Graph Meta-->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Vali Admin">
+    <meta property="og:title" content="Vali - Free Bootstrap 4 admin theme">
+    <meta property="og:url" content="http://pratikborsadiya.in/blog/vali-admin">
+    <meta property="og:image" content="http://pratikborsadiya.in/blog/vali-admin/hero-social.png">
+    <meta property="og:description" content="Vali is a responsive and free admin theme built with Bootstrap 4, SASS and PUG.js. It's fully customizable and modular.">
+    <title>CQ2後台管理系統</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Main CSS-->
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <!-- Font-icon css-->
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+    <meta name="description" content="Source code generated using layoutit.com">
+    <meta name="author" content="LayoutIt!">
+
+    <!-- 引用資源 -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <!------------------------>
+    <!-- 引用datepicker.css -->
+    <!------------------------> 
+    <link href="css/datepicker.css" rel="stylesheet">
+
+  </head>
+  <body class="app sidebar-mini rtl">
+    <!-- Navbar-->
+    <header class="app-header"><a class="app-header__logo" href="/">CQ2</a>
+        <!-- Sidebar toggle button--><a class="app-sidebar__toggle" href="#" data-toggle="sidebar" aria-label="Hide Sidebar"></a>
+        <!-- Navbar Right Menu-->
+        <ul class="app-nav">
+          <!--Notification Menu-->
+          <!-- User Menu-->
+          <li class="dropdown"><a class="app-nav__item" href="#" data-toggle="dropdown" aria-label="Open Profile Menu"><i class="fa fa-user fa-lg"></i></a>
+            <ul class="dropdown-menu settings-menu dropdown-menu-right">
+              <li><a class="dropdown-item" href="page-user.html"><i class="fa fa-cog fa-lg"></i> Settings</a></li>
+              <li><a class="dropdown-item" href="page-user.html"><i class="fa fa-user fa-lg"></i> Profile</a></li>
+              <li><a class="dropdown-item" href="page-login.html"><i class="fa fa-sign-out fa-lg"></i> Logout</a></li>
+            </ul>
+          </li>
+        </ul>
+      </header>
+      <!-- Sidebar menu-->
+      <div class="app-sidebar__overlay" data-toggle="sidebar"></div>
+      <aside class="app-sidebar">
+      
+          <ul class="app-menu">
+            <!--左邊欄位開始-->
+            <!--首頁-->
+            <li><a class="app-menu__item" href="/"><i class="app-menu__icon fa fa-home"></i><span class="app-menu__label">首頁</span></a></li>
+            <!--管理店鋪-->
+            <li class="treeview is-expanded"><a class="app-menu__item" href="#" data-toggle="treeview"><i class="app-menu__icon fa fa-th-list"></i><span class="app-menu__label">管理店鋪</span><i class="treeview-indicator fa fa-angle-right"></i></a>
+              <ul class="treeview-menu">
+                <li><a class="treeview-item" href="/storeListByPage?pageNo=1#"><i class="icon fa fa-circle-o"></i> 查詢店鋪</a></li>
+                <li><a class="treeview-item active" href="/storeAddForm"><i class="icon fa fa-circle-o"></i> 新增店鋪</a></li>
+                <li><a class="treeview-item" href="table-data-table.html"><i class="icon fa fa-circle-o"></i> 修改店鋪</a></li>
+              </ul>
+            </li>
+            <!--管理理髮師-->
+            <li class="treeview"><a class="app-menu__item" href="#" data-toggle="treeview"><i class="app-menu__icon fa fa-th-list"></i><span class="app-menu__label">管理理髮師</span><i class="treeview-indicator fa fa-angle-right"></i></a>
+              <ul class="treeview-menu">
+                  <li><a class="treeview-item" href="/designerListByPage?pageNo=1#"><i class="icon fa fa-circle-o"></i> 查詢理髮師</a></li>
+                  <li><a class="treeview-item" href="table-data-table.html"><i class="icon fa fa-circle-o"></i> 新增理髮師</a></li>
+                  <li><a class="treeview-item" href="table-data-table.html"><i class="icon fa fa-circle-o"></i> 修改理髮師</a></li>
+              </ul>
+            </li>
+    
+            <!--管理機器人-->
+            <li class="treeview"><a class="app-menu__item" href="#" data-toggle="treeview"><i class="app-menu__icon fa fa-th-list"></i><span class="app-menu__label">管理機器人</span><i class="treeview-indicator fa fa-angle-right"></i></a>
+              <ul class="treeview-menu">
+                  <li><a class="treeview-item" href="/robotListByPage?pageNo=1#"><i class="icon fa fa-circle-o"></i> 查詢機器人</a></li>
+                  <li><a class="treeview-item" href="table-data-table.html"><i class="icon fa fa-circle-o"></i> 新增機器人</a></li>
+                  <li><a class="treeview-item" href="table-data-table.html"><i class="icon fa fa-circle-o"></i> 修改機器人</a></li>
+              </ul>
+            </li>
+    
+            <!--管理打卡資料-->
+            <li class="treeview"><a class="app-menu__item" href="#" data-toggle="treeview"><i class="app-menu__icon fa fa-th-list"></i><span class="app-menu__label">管理打卡資料</span><i class="treeview-indicator fa fa-angle-right"></i></a>
+              <ul class="treeview-menu">
+                  <li><a class="treeview-item" href="table-basic.html"><i class="icon fa fa-circle-o"></i> 查詢打卡資料</a></li>
+              </ul>
+            </li>
+    
+          </ul> 
+          <!--左邊欄位結束-->
+        </aside>
+    <main class="app-content">
+      <div class="app-title">
+        <div>
+          <h1><i class="fa fa-edit"></i> 新增店鋪</h1>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <div class="tile">
+            <div class="row">
+                <div class="col-lg-6">
+                    <form role="form" action="/storeAdd">
+                        <div class="form-group">
+                            <label class="control-label">店鋪編號(*)</label>
+                            <input type="text" class="form-control" id="stoNo"  name="stoNo"/>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label">店鋪名稱</label>
+                            <input type="text" class="form-control" id="stoName"  name="stoName"/>
+                        </div>
+                        <!--
+                        <div class="form-group">
+                            <label for="exampleSelect2">店鋪縣市</label>
+                            <select class="form-control" id="stoCity">
+                                <option>基隆市</option>
+                                <option>台北市</option>
+                                <option>新北市</option>
+                                <option>桃園縣</option>
+                                <option>新竹市</option>
+                                <option>新竹縣</option>
+                                <option>苗栗縣</option>
+                                <option>台中市</option>
+                                <option>彰化縣</option>
+                                <option>南投縣</option>
+                                <option>雲林縣</option>
+                                <option>嘉義市</option>
+                                <option>嘉義縣</option>
+                                <option>台南市</option>
+                                <option>高雄市</option>
+                                <option>屏東縣</option>
+                                <option>台東縣</option>
+                                <option>花蓮縣</option>
+                                <option>宜蘭縣</option>
+                                <option>澎湖縣</option>
+                                <option>金門縣</option>
+                                <option>連江縣</option>
+                            </select>
+                        </div>
+                        -->
+                        <div class="form-group">
+                            <label class="control-label">店鋪縣市</label>
+                            <input type="text" class="form-control" id="stoCity"  name="stoCity"/>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label">店鋪地址</label>
+                            <input type="text" class="form-control" id="stoAddress"  name="stoAddress"/>
+                        </div>
+                        <button type="submit" class="btn btn-default">新增</button>
+                    </form>
+                </div>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <!------------------------>
+    <!-- 引用datepicker.js  -->
+    <!------------------------> 
+    <script src="js/bootstrap-datepicker.js"></script>
+    <script src="js/scripts.js"></script>   
+	
+    <!------------------------------->
+    <!-- 加入date picker設定       -->
+    <!------------------------------->
+    <script>
+    $( function() {
+        $('#dp3').datepicker();
+        
+        $('#dp3').on('changeDate', function(ev){
+            $(this).datepicker('hide');
+        });	
+    });     
+    </script>	
+
+    <!-- Essential javascripts for application to work-->
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/main.js"></script>
+    <!-- The javascript plugin to display page loading on top-->
+    <script src="js/plugins/pace.min.js"></script>
+    <!-- Page specific javascripts-->
+    <!-- Google analytics script-->
+    <script type="text/javascript">
+      if(document.location.hostname == 'pratikborsadiya.in') {
+      	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+      	ga('create', 'UA-72504830-1', 'auto');
+      	ga('send', 'pageview');
+      }
+    </script>
+  </body>
+</html>

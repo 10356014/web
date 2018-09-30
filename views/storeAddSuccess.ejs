@@ -43,47 +43,46 @@
     <div class="app-sidebar__overlay" data-toggle="sidebar"></div>
     <aside class="app-sidebar">
       
-      <ul class="app-menu">
-        <!--左邊欄位開始-->
-        <!--首頁-->
-        <li><a class="app-menu__item active" href="/"><i class="app-menu__icon fa fa-home"></i><span class="app-menu__label">首頁</span></a></li>
-        <!--管理店鋪-->
-        <li class="treeview"><a class="app-menu__item" href="#" data-toggle="treeview"><i class="app-menu__icon fa fa-th-list"></i><span class="app-menu__label">管理店鋪</span><i class="treeview-indicator fa fa-angle-right"></i></a>
-          <ul class="treeview-menu">
-            <li><a class="treeview-item" href="/storeListByPage?pageNo=1#"><i class="icon fa fa-circle-o"></i> 查詢店鋪</a></li>
-            <li><a class="treeview-item" href="/storeAddForm"><i class="icon fa fa-circle-o"></i> 新增店鋪</a></li>
-            <li><a class="treeview-item" href="table-data-table.html"><i class="icon fa fa-circle-o"></i> 修改店鋪</a></li>
-          </ul>
-        </li>
-        <!--管理理髮師-->
-        <li class="treeview"><a class="app-menu__item" href="#" data-toggle="treeview"><i class="app-menu__icon fa fa-th-list"></i><span class="app-menu__label">管理理髮師</span><i class="treeview-indicator fa fa-angle-right"></i></a>
-          <ul class="treeview-menu">
-              <li><a class="treeview-item" href="/designerListByPage?pageNo=1#"><i class="icon fa fa-circle-o"></i> 查詢理髮師</a></li>
-              <li><a class="treeview-item" href="table-data-table.html"><i class="icon fa fa-circle-o"></i> 新增理髮師</a></li>
-              <li><a class="treeview-item" href="table-data-table.html"><i class="icon fa fa-circle-o"></i> 修改理髮師</a></li>
-          </ul>
-        </li>
-
-        <!--管理機器人-->
-        <li class="treeview"><a class="app-menu__item" href="#" data-toggle="treeview"><i class="app-menu__icon fa fa-th-list"></i><span class="app-menu__label">管理機器人</span><i class="treeview-indicator fa fa-angle-right"></i></a>
-          <ul class="treeview-menu">
-              <li><a class="treeview-item" href="/robotListByPage?pageNo=1#"><i class="icon fa fa-circle-o"></i> 查詢機器人</a></li>
-              <li><a class="treeview-item" href="table-data-table.html"><i class="icon fa fa-circle-o"></i> 新增機器人</a></li>
-              <li><a class="treeview-item" href="table-data-table.html"><i class="icon fa fa-circle-o"></i> 修改機器人</a></li>
-          </ul>
-        </li>
-
-        <!--管理打卡資料-->
-        <li class="treeview"><a class="app-menu__item" href="#" data-toggle="treeview"><i class="app-menu__icon fa fa-th-list"></i><span class="app-menu__label">管理打卡資料</span><i class="treeview-indicator fa fa-angle-right"></i></a>
-          <ul class="treeview-menu">
-              <li><a class="treeview-item" href="table-basic.html"><i class="icon fa fa-circle-o"></i> 查詢打卡資料</a></li>
-          </ul>
-        </li>
-        
-
-      </ul> 
-      <!--左邊欄位結束-->
-    </aside>
+        <ul class="app-menu">
+          <!--左邊欄位開始-->
+          <!--首頁-->
+          <li><a class="app-menu__item" href="/"><i class="app-menu__icon fa fa-home"></i><span class="app-menu__label">首頁</span></a></li>
+          <!--管理店鋪-->
+          <li class="treeview is-expanded"><a class="app-menu__item" href="#" data-toggle="treeview"><i class="app-menu__icon fa fa-th-list"></i><span class="app-menu__label">管理店鋪</span><i class="treeview-indicator fa fa-angle-right"></i></a>
+            <ul class="treeview-menu">
+              <li><a class="treeview-item" href="/storeListByPage?pageNo=1#"><i class="icon fa fa-circle-o"></i> 查詢店鋪</a></li>
+              <li><a class="treeview-item active" href="/storeAddForm"><i class="icon fa fa-circle-o"></i> 新增店鋪</a></li>
+              <li><a class="treeview-item" href="table-data-table.html"><i class="icon fa fa-circle-o"></i> 修改店鋪</a></li>
+            </ul>
+          </li>
+          <!--管理理髮師-->
+          <li class="treeview"><a class="app-menu__item" href="#" data-toggle="treeview"><i class="app-menu__icon fa fa-th-list"></i><span class="app-menu__label">管理理髮師</span><i class="treeview-indicator fa fa-angle-right"></i></a>
+            <ul class="treeview-menu">
+                <li><a class="treeview-item" href="/designerListByPage?pageNo=1#"><i class="icon fa fa-circle-o"></i> 查詢理髮師</a></li>
+                <li><a class="treeview-item" href="table-data-table.html"><i class="icon fa fa-circle-o"></i> 新增理髮師</a></li>
+                <li><a class="treeview-item" href="table-data-table.html"><i class="icon fa fa-circle-o"></i> 修改理髮師</a></li>
+            </ul>
+          </li>
+  
+          <!--管理機器人-->
+          <li class="treeview"><a class="app-menu__item" href="#" data-toggle="treeview"><i class="app-menu__icon fa fa-th-list"></i><span class="app-menu__label">管理機器人</span><i class="treeview-indicator fa fa-angle-right"></i></a>
+            <ul class="treeview-menu">
+                <li><a class="treeview-item" href="/robotListByPage?pageNo=1#"><i class="icon fa fa-circle-o"></i> 查詢機器人</a></li>
+                <li><a class="treeview-item" href="table-data-table.html"><i class="icon fa fa-circle-o"></i> 新增機器人</a></li>
+                <li><a class="treeview-item" href="table-data-table.html"><i class="icon fa fa-circle-o"></i> 修改機器人</a></li>
+            </ul>
+          </li>
+  
+          <!--管理打卡資料-->
+          <li class="treeview"><a class="app-menu__item" href="#" data-toggle="treeview"><i class="app-menu__icon fa fa-th-list"></i><span class="app-menu__label">管理打卡資料</span><i class="treeview-indicator fa fa-angle-right"></i></a>
+            <ul class="treeview-menu">
+                <li><a class="treeview-item" href="table-basic.html"><i class="icon fa fa-circle-o"></i> 查詢打卡資料</a></li>
+            </ul>
+          </li>
+  
+        </ul> 
+        <!--左邊欄位結束-->
+      </aside>
     <main class="app-content">
       <!--
       <div class="row">
@@ -124,8 +123,7 @@
       <div class="row">
         <div class="col-md-10">
           <div class="tile">
-            <h3 class="tile-title">CQ2 後台管理系統</h3>
-            <p>全新引進快剪專門店，我們不洗ˋ不染ˋ不燙，只為做好專業的剪髮服務，不需為業績操煩，不必為沒穩定的客源而苦惱，潔淨的環境，專業化設備。</p>
+            <h3 class="tile-title">新增成功!!!</h3>
           </div>
         </div>
       </div>

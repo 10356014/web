@@ -13,6 +13,11 @@ var users = require('./routes/users');
 //-------------------------------------------------------
 var storeListByPage = require('./routes/storeListByPage');
 var designerListByPage = require('./routes/designerListByPage');
+var robotListByPage = require('./routes/robotListByPage');
+
+var storeAddForm = require('./routes/storeAddForm');
+var storeAdd = require('./routes/storeAdd');
+
 //-------------------------------------------------------
 
 var app = express();
@@ -29,11 +34,24 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', index);
 app.use('/users', users);
 
+app.get('/', function(req, res) {  
+    res.render('index', {  
+     title: '首頁'
+    });  
+});  
+
+
 //-------------------------------------------------------
 // 增加以下的app.use()
 //-------------------------------------------------------
+app.use('/', index);
 app.use('/storeListByPage', storeListByPage);
 app.use('/designerListByPage', designerListByPage);
+app.use('/robotListByPage', robotListByPage);
+
+app.use('/storeAddForm', storeAddForm);
+app.use('/storeAdd', storeAdd);
+
 //-------------------------------------------------------
 
 // catch 404 and forward to error handler

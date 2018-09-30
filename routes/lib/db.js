@@ -30,6 +30,7 @@ var pool  = mysql.createPool({
     password: 'mysql',
     host: '127.0.0.1',
     database: 'project', 
+    //database: 'north',
     waitForConnections : true, 
     connectionLimit : 10       
 });

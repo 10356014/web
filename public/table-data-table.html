@@ -13,7 +13,7 @@
     <meta property="og:url" content="http://pratikborsadiya.in/blog/vali-admin">
     <meta property="og:image" content="http://pratikborsadiya.in/blog/vali-admin/hero-social.png">
     <meta property="og:description" content="Vali is a responsive and free admin theme built with Bootstrap 4, SASS and PUG.js. It's fully customizable and modular.">
-    <title>CQ2後台管理系統</title>
+    <title>Vali Admin - Free Bootstrap 4 Admin Template</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -24,11 +24,16 @@
   </head>
   <body class="app sidebar-mini rtl">
     <!-- Navbar-->
-    <header class="app-header"><a class="app-header__logo" href="/">CQ2</a>
+    <header class="app-header"><a class="app-header__logo" href="index.html">CQ2</a>
       <!-- Sidebar toggle button--><a class="app-sidebar__toggle" href="#" data-toggle="sidebar" aria-label="Hide Sidebar"></a>
       <!-- Navbar Right Menu-->
       <ul class="app-nav">
+        <li class="app-search">
+          <input class="app-search__input" type="search" placeholder="Search">
+          <button class="app-search__button"><i class="fa fa-search"></i></button>
+        </li>
         <!--Notification Menu-->
+          
         <!-- User Menu-->
         <li class="dropdown"><a class="app-nav__item" href="#" data-toggle="dropdown" aria-label="Open Profile Menu"><i class="fa fa-user fa-lg"></i></a>
           <ul class="dropdown-menu settings-menu dropdown-menu-right">
@@ -46,31 +51,31 @@
       <ul class="app-menu">
         <!--左邊欄位開始-->
         <!--首頁-->
-        <li><a class="app-menu__item" href="/"><i class="app-menu__icon fa fa-home"></i><span class="app-menu__label">首頁</span></a></li>
+        <li><a class="app-menu__item" href="index.html"><i class="app-menu__icon fa fa-home"></i><span class="app-menu__label">首頁</span></a></li>
         <!--管理店鋪-->
-        <li class="treeview"><a class="app-menu__item" href="#" data-toggle="treeview"><i class="app-menu__icon fa fa-th-list"></i><span class="app-menu__label">管理店鋪</span><i class="treeview-indicator fa fa-angle-right"></i></a>
+        <li class="treeview is-expanded"><a class="app-menu__item" href="#" data-toggle="treeview"><i class="app-menu__icon fa fa-th-list"></i><span class="app-menu__label">管理店鋪</span><i class="treeview-indicator fa fa-angle-right"></i></a>
           <ul class="treeview-menu">
-            <li><a class="treeview-item active" href="/storeListByPage?pageNo=1#"><i class="icon fa fa-circle-o"></i> 查詢店鋪</a></li>
+            <li><a class="treeview-item active" href="table-data-table.html"><i class="icon fa fa-circle-o"></i> 查詢店鋪</a></li>
             <li><a class="treeview-item" href="table-data-table.html"><i class="icon fa fa-circle-o"></i> 新增店鋪</a></li>
             <li><a class="treeview-item" href="table-data-table.html"><i class="icon fa fa-circle-o"></i> 修改店鋪</a></li>
           </ul>
         </li>
 
         <!--管理理髮師-->
-        <li class="treeview is-expanded"><a class="app-menu__item" href="#" data-toggle="treeview"><i class="app-menu__icon fa fa-th-list"></i><span class="app-menu__label">管理理髮師</span><i class="treeview-indicator fa fa-angle-right"></i></a>
+        <li class="treeview"><a class="app-menu__item" href="#" data-toggle="treeview"><i class="app-menu__icon fa fa-th-list"></i><span class="app-menu__label">管理理髮師</span><i class="treeview-indicator fa fa-angle-right"></i></a>
           <ul class="treeview-menu">
-              <li><a class="treeview-item active" href="/designerListByPage?pageNo=1#"><i class="icon fa fa-circle-o"></i> 查詢理髮師</a></li>
+              <li><a class="treeview-item" href="table-basic.html"><i class="icon fa fa-circle-o"></i> 查詢理髮師</a></li>
               <li><a class="treeview-item" href="table-data-table.html"><i class="icon fa fa-circle-o"></i> 新增理髮師</a></li>
               <li><a class="treeview-item" href="table-data-table.html"><i class="icon fa fa-circle-o"></i> 修改理髮師</a></li>
           </ul>
         </li>
 
-        <!--管理機器人-->
-        <li class="treeview"><a class="app-menu__item" href="#" data-toggle="treeview"><i class="app-menu__icon fa fa-th-list"></i><span class="app-menu__label">管理機器人</span><i class="treeview-indicator fa fa-angle-right"></i></a>
+        <!--管理小貝-->
+        <li class="treeview"><a class="app-menu__item" href="#" data-toggle="treeview"><i class="app-menu__icon fa fa-th-list"></i><span class="app-menu__label">管理小貝</span><i class="treeview-indicator fa fa-angle-right"></i></a>
           <ul class="treeview-menu">
-              <li><a class="treeview-item" href="/robotListByPage?pageNo=1#"><i class="icon fa fa-circle-o"></i> 查詢機器人</a></li>
-              <li><a class="treeview-item" href="table-data-table.html"><i class="icon fa fa-circle-o"></i> 新增機器人</a></li>
-              <li><a class="treeview-item" href="table-data-table.html"><i class="icon fa fa-circle-o"></i> 修改機器人</a></li>
+              <li><a class="treeview-item" href="table-basic.html"><i class="icon fa fa-circle-o"></i> 查詢小貝</a></li>
+              <li><a class="treeview-item" href="table-data-table.html"><i class="icon fa fa-circle-o"></i> 新增小貝</a></li>
+              <li><a class="treeview-item" href="table-data-table.html"><i class="icon fa fa-circle-o"></i> 修改小貝</a></li>
           </ul>
         </li>
 
@@ -95,11 +100,10 @@
               <table class="table table-hover table-bordered" id="sampleTable">
                 <thead>
                   <tr>
-                    <th>理髮師編號</th>
-                    <th>理髮師姓名</th>
-                    <th>理髮師ID</th>
-                    <th>理髮師生日</th>
-                    <th>理髮師地址</th>
+                    <th>店鋪編號</th>
+                    <th>店鋪名稱</th>
+                    <th>店鋪縣市</th>
+                    <th>店鋪地址</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -108,29 +112,24 @@
                     <!------------------------------>                       
                     <% for(var i=0; i<data.length; i++) {%>
                         <tr>
-                            <!--
                             <td>
-                              <a href="/productOne?no=<%= data[i].desNo %>"><%= data[i].desNo %></a>
-                            </td>
-                            -->
-                            <td>
-                              <%= data[i].desName %></a>
+                                <a href="/productOne?no=<%= data[i].stoNo %>"><%= data[i].stoNo %></a>
                             </td>
                             <td>
-                              <%= data[i].desID %></a>
-                            </td>  
-                            <td>
-                              <%= data[i].birthday %></a>
+                                <%= data[i].stoName %></a>
                             </td>
                             <td>
-                              <%= data[i].desAddress %></a>
-                            </td>                
+                                <%= data[i].stoCity %></a>
+                            </td>
+                            <td>
+                                <%= data[i].stoAddress %></a>
+                            </td>                       
                         </tr> 
                     <% } %> 
                     <!------------------------------>
                     <!-- 顯示資料內容結束         -->
                     <!------------------------------>                       
-                </tbody>
+                    </tbody>
               </table>
             </div>
           </div>

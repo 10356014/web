@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 
 <!--********************-->
-<!-- 網頁開始            -->
+<!-- 網頁開始           -->
 <!--********************-->
 <html lang="en">
 
 <!--=====================-->
-<!-- 標題開始              -->
+<!-- 標題開始            -->
 <!--=====================-->
 <head>
 <meta charset="utf-8">
@@ -24,26 +24,26 @@
 <link href="css/style.css" rel="stylesheet">
 </head>  
 <!--=====================-->
-<!-- 標題列結束            -->
+<!-- 標題列結束          -->
 <!--=====================--> 
 
 
 
 <!--=====================-->
-<!-- 內容開始             -->
+<!-- 內容開始            -->
 <!--=====================-->
 <body>
     <div class="container">
         <!------------------------------>
-        <!-- 導覽列開始                 -->
+        <!-- 導覽列開始               -->
         <!------------------------------>
-        <div class="row navbar">            	
+        <div class="row navbar">                
             <div class="col-md-12">
                 <ul class="nav nav-tabs">
                     <li class="active">
                         <img src="image/icon48.png" class="circle"/>
                     </li>
-						
+
                     <li class="dropdown">
                         <a href="#" data-toggle="dropdown" class="dropdown-toggle">基本資料處理<strong class="caret"></strong></a>
                         <ul class="dropdown-menu">
@@ -55,7 +55,7 @@
                             </li>
 
                             <li class="divider" />
-                            
+
                             <li>
                                 <a href="#">產品資料清單</a>
                             </li>  
@@ -74,9 +74,9 @@
                             <li>
                                 <a href="#">退貨</a>
                             </li>
-                            
+
                             <li class="divider" />           
-                                          
+
                             <li>
                                 <a href="#">付款</a>
                             </li>
@@ -85,7 +85,7 @@
                             </li>                                                               
                         </ul>
                     </li>
-                                                
+
                     <li class="dropdown">
                         <a href="#" data-toggle="dropdown" class="dropdown-toggle">報表<strong class="caret"></strong></a>
                         <ul class="dropdown-menu">
@@ -97,7 +97,7 @@
                             </li>
                         </ul>
                     </li>
-                                                
+
                     <li class="dropdown pull-right">
                         <a href="#" data-toggle="dropdown" class="dropdown-toggle">使用者<strong class="caret"></strong></a>
                         <ul class="dropdown-menu">
@@ -107,15 +107,15 @@
                             <li>
                                 <a href="#">登出</a>
                             </li>
-                            
+
                             <li class="divider" />     
-                            
+
                             <li>
                                 <a href="#">回首頁</a>
                             </li>                            
                         </ul>
                     </li>
-                        
+
                     <li class="pull-right">
                         <span class="username">王小明</span>
                     </li>                         
@@ -123,103 +123,124 @@
             </div>
         </div>
         <!------------------------------>
-        <!-- 導覽列結束                 -->
+        <!-- 導覽列結束               -->
+        <!------------------------------>       
+
+
         <!------------------------------>
-		
-        
-      
-        <!------------------------------>
-        <!-- 大標題開始                 -->
+        <!-- 大標題開始               -->
         <!------------------------------>  
         <div class="row">
             <div class="col-md-12">              
                 <div class="jumbotron">
                     <h2>
-                        主畫面
+                        店鋪管理
                     </h2>
-			    </div>
+		    
+                </div>
             </div>    
         </div>        
         <!------------------------------>
-        <!-- 大標題結束                 -->
+        <!-- 大標題結束               -->
         <!------------------------------>                 
-                
-                
-                
+
+
+
         <!------------------------------>
-        <!-- 內文開始                  -->
+        <!-- 頁碼開始                 -->
+        <!------------------------------>       
+        <div class="row">
+            <div class="col-md-10">
+                <ul class="pagination">
+                    <li>
+                        <a>第<%=pageNo%>頁</a>
+                    </li>                   
+
+                    <% if(startPage>1){ %>
+                        <li>
+                            <a href="/storeListByPage?pageNo=<%=(startPage-1)%>">上一區段...</a>
+                        </li>
+                    <% } %> 
+
+                    <% for(var i=startPage; i<startPage+navSegments; i++) {%>
+                        <% if(i<=totalPage){ %>
+                            <li>
+                                <a href="/storeListByPage?pageNo=<%=i%>"><%=i%></a>
+                            </li>
+                        <% } %> 
+                    <% } %>
+
+                    <% if(startPage+linePerPage<totalPage){ %>
+                        <li>
+                            <a href="/storeListByPage?pageNo=<%=(startPage+navSegments)%>">...下一區段</a>
+                        </li>
+                    <% } %>                         
+                </ul>
+            </div>  
+        </div>  
+        <!------------------------------>
+        <!-- 頁碼結束                 -->
+        <!------------------------------>
+
+
+
+        <!------------------------------>
+        <!-- 內文開始                 -->
         <!------------------------------>                 
         <div class="row">
             <div class="col-md-12">
-                <div class="row">
-                    <!-- 第1個圖文框 -->
-                    <div class="col-md-4">
-                        <div class="thumbnail">
-                            <img alt="Bootstrap Thumbnail First" src="image/t1.jpg">
-                            <div class="caption">
-                                <h3>
-                                    Thumbnail label
-                                </h3>
-                                <p>
-                                    Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.
-                                </p>
-                                <p>
-                                    <a class="btn" href="#">Action</a>
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- 第1個圖文框結束 --> 	                    
-
-                    <!-- 第2個圖文框 -->
-                    <div class="col-md-4">
-                        <div class="thumbnail">
-                            <img alt="Bootstrap Thumbnail First" src="image/t2.jpg">
-                            <div class="caption">
-                                <h3>
-                                    Thumbnail label
-                                </h3>
-                                <p>
-                                    Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.
-                                </p>
-                                <p>
-                                    <a class="btn" href="#">Action</a>
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- 第2個圖文框結束 --> 	
-                    
-                    <!-- 第3個圖文框 -->
-                    <div class="col-md-4">
-                        <div class="thumbnail">
-                            <img alt="Bootstrap Thumbnail First" src="image/t3.jpg">
-                            <div class="caption">
-                                <h3>
-                                    Thumbnail label
-                                </h3>
-                                <p>
-                                    Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.
-                                </p>
-                                <p>
-                                    <a class="btn" href="#">Action</a>
-                                </p>
-                            </div>
-                        </div>
-                    </div>                                        
-                    <!-- 第3個圖文框結束 --> 		
-
-				</div>
-			</div>
-		</div>
+                <table class="table table-bordered productTable">
+                    <thead>
+                        <tr>
+                            <th>
+                                店鋪編號
+                            </th>
+                            <th>
+                                店鋪名稱
+                            </th>
+                            <th>
+                                店鋪縣市
+                            </th>
+                            <th>
+                                店鋪地址
+                            </th>                     
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!------------------------------>
+                        <!-- 顯示資料內容開始         -->
+                        <!------------------------------>                       
+                        <% for(var i=0; i<data.length; i++) {%>
+                            <tr>
+                                <td>
+                                    <a href="/productOne?no=<%= data[i].stoNo %>"><%= data[i].stoNo %></a>
+                                </td>
+                                <td>
+                                    <%= data[i].stoName %></a>
+                                </td>
+                                <td>
+                                    <%= data[i].stoCity %></a>
+                                </td>
+                                <td>
+                                    <%= data[i].stoAddress %></a>
+                                </td>                       
+                            </tr> 
+                        <% } %> 
+                        <!------------------------------>
+                        <!-- 顯示資料內容結束         -->
+                        <!------------------------------>                       
+                    </tbody>
+                </table>
+            </div>
+        </div>
         <!------------------------------>
-        <!-- 內文結束                  -->
+        <!-- 內文結束                 -->
         <!------------------------------>         
-    
-    
-    
+
+
+
         <!------------------------------>
-        <!-- 表尾開始                  -->
+        <!-- 表尾開始                 -->
         <!------------------------------>     
         <div class="row">
             <div class="col-md-12">
@@ -230,19 +251,19 @@
             </div>
         </div>
         <!------------------------------>
-        <!-- 表尾結束                   -->
+        <!-- 表尾結束                 -->
         <!------------------------------>
-                
-	</div>
+
+    </div>
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/scripts.js"></script>   
 </body>
 <!--=====================-->
-<!-- 內容結束             -->
+<!-- 內容結束            -->
 <!--=====================-->
 
 </html>
 <!--********************-->
-<!-- 網頁結束            -->
+<!-- 網頁結束           -->
 <!--********************-->

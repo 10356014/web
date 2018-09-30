@@ -57,18 +57,18 @@
         </li>
 
         <!--管理理髮師-->
-        <li class="treeview is-expanded"><a class="app-menu__item" href="#" data-toggle="treeview"><i class="app-menu__icon fa fa-th-list"></i><span class="app-menu__label">管理理髮師</span><i class="treeview-indicator fa fa-angle-right"></i></a>
+        <li class="treeview"><a class="app-menu__item" href="#" data-toggle="treeview"><i class="app-menu__icon fa fa-th-list"></i><span class="app-menu__label">管理理髮師</span><i class="treeview-indicator fa fa-angle-right"></i></a>
           <ul class="treeview-menu">
-              <li><a class="treeview-item active" href="/designerListByPage?pageNo=1#"><i class="icon fa fa-circle-o"></i> 查詢理髮師</a></li>
+              <li><a class="treeview-item" href="/designerListByPage?pageNo=1#"><i class="icon fa fa-circle-o"></i> 查詢理髮師</a></li>
               <li><a class="treeview-item" href="table-data-table.html"><i class="icon fa fa-circle-o"></i> 新增理髮師</a></li>
               <li><a class="treeview-item" href="table-data-table.html"><i class="icon fa fa-circle-o"></i> 修改理髮師</a></li>
           </ul>
         </li>
 
         <!--管理機器人-->
-        <li class="treeview"><a class="app-menu__item" href="#" data-toggle="treeview"><i class="app-menu__icon fa fa-th-list"></i><span class="app-menu__label">管理機器人</span><i class="treeview-indicator fa fa-angle-right"></i></a>
+        <li class="treeview is-expanded"><a class="app-menu__item" href="#" data-toggle="treeview"><i class="app-menu__icon fa fa-th-list"></i><span class="app-menu__label">管理機器人</span><i class="treeview-indicator fa fa-angle-right"></i></a>
           <ul class="treeview-menu">
-              <li><a class="treeview-item" href="/robotListByPage?pageNo=1#"><i class="icon fa fa-circle-o"></i> 查詢機器人</a></li>
+              <li><a class="treeview-item active" href="/robotListByPage?pageNo=1#"><i class="icon fa fa-circle-o"></i> 查詢機器人</a></li>
               <li><a class="treeview-item" href="table-data-table.html"><i class="icon fa fa-circle-o"></i> 新增機器人</a></li>
               <li><a class="treeview-item" href="table-data-table.html"><i class="icon fa fa-circle-o"></i> 修改機器人</a></li>
           </ul>
@@ -95,11 +95,8 @@
               <table class="table table-hover table-bordered" id="sampleTable">
                 <thead>
                   <tr>
-                    <th>理髮師編號</th>
-                    <th>理髮師姓名</th>
-                    <th>理髮師ID</th>
-                    <th>理髮師生日</th>
-                    <th>理髮師地址</th>
+                    <th>機器人編號</th>
+                    <th>機器人狀態</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -108,23 +105,13 @@
                     <!------------------------------>                       
                     <% for(var i=0; i<data.length; i++) {%>
                         <tr>
-                            <!--
                             <td>
-                              <a href="/productOne?no=<%= data[i].desNo %>"><%= data[i].desNo %></a>
-                            </td>
-                            -->
-                            <td>
-                              <%= data[i].desName %></a>
+                                <%= data[i].robNo %></a>
                             </td>
                             <td>
-                              <%= data[i].desID %></a>
+                                <%= data[i].robState %></a>
                             </td>  
-                            <td>
-                              <%= data[i].birthday %></a>
-                            </td>
-                            <td>
-                              <%= data[i].desAddress %></a>
-                            </td>                
+                                    
                         </tr> 
                     <% } %> 
                     <!------------------------------>

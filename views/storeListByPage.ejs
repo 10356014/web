@@ -51,7 +51,7 @@
         <li class="treeview is-expanded"><a class="app-menu__item" href="#" data-toggle="treeview"><i class="app-menu__icon fa fa-th-list"></i><span class="app-menu__label">管理店鋪</span><i class="treeview-indicator fa fa-angle-right"></i></a>
           <ul class="treeview-menu">
             <li><a class="treeview-item active" href="/storeListByPage?pageNo=1#"><i class="icon fa fa-circle-o"></i> 查詢店鋪</a></li>
-            <li><a class="treeview-item" href="table-data-table.html"><i class="icon fa fa-circle-o"></i> 新增店鋪</a></li>
+            <li><a class="treeview-item" href="/storeAddForm"><i class="icon fa fa-circle-o"></i> 新增店鋪</a></li>
             <li><a class="treeview-item" href="table-data-table.html"><i class="icon fa fa-circle-o"></i> 修改店鋪</a></li>
           </ul>
         </li>
@@ -99,6 +99,8 @@
                     <th>店鋪名稱</th>
                     <th>店鋪縣市</th>
                     <th>店鋪地址</th>
+                    <th>更改</th>
+                    <th>刪除</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -118,7 +120,19 @@
                             </td>
                             <td>
                                 <%= data[i].stoAddress %></a>
-                            </td>                       
+                            </td>   
+                            <td>
+                              <form role="form" method="get" action="/storeNewDataForm">
+                                <input type="hidden" name="stoNo" value="<%=data[i].stoNo%>"/>
+                                <button class="btn btn-warning" type="submit">更改</button>
+                              </form>
+                            </td>     
+                            <td>
+                              <form  onsubmit="return confirm('是否確定刪除?');" role="form" action="/storeDelete">
+                                <input type="hidden" name="stoNo" value="<%=data[i].stoNo%>"/>
+                                <button class="btn btn-danger" type="submit">刪除</button>
+                              </form>
+                            </td>                  
                         </tr> 
                     <% } %> 
                     <!------------------------------>

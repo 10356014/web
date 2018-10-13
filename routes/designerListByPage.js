@@ -7,6 +7,12 @@ var mysql = require('mysql');
 //----------------------------------------------------
 var pool = require('./lib/db.js');
 
+//----------------------
+// 引用外掛
+//----------------------
+var moment = require('moment');
+
+
 var startPage=1;
 var linePerPage=15; 
 var navSegments=10;
@@ -58,7 +64,7 @@ router.get('/', function(req, res, next) {
                 res.render('designerNotFound', {});
             }else{
                 var recordNo=(pageNo-1)*linePerPage+1;
-                res.render('designerListByPage', {data:results, pageNo:pageNo, totalLine:totalLine, totalPage:totalPage, startPage:startPage, linePerPage:linePerPage, navSegments:navSegments});
+                res.render('designerListByPage', {data:results, pageNo:pageNo, totalLine:totalLine, totalPage:totalPage, startPage:startPage, linePerPage:linePerPage, navSegments:navSegments, moment:moment});
             }
         }); 
     }); 

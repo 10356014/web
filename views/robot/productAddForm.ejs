@@ -1,0 +1,148 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>測試網頁</title>
+<!--*********-->
+<!-- 加入css -->
+<!--*********-->
+<link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<link href="css/main.css" rel="stylesheet" type="text/css" />
+<link href="css/myDropdownMenu.css" rel="stylesheet" type="text/css" />
+<!------------------------>
+<!-- 引用datepicker.css -->
+<!------------------------> 
+<link href="css/datepicker.css" rel="stylesheet">
+
+</head>
+<body>
+    <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+    <div class="header">
+        <img src="images/logo.jpg" class="logo">
+       
+        <div class="navbar">
+            <ul class="right">
+                <li><a href="/">回首頁</a></li>
+            </ul>          
+        </div>        
+    </div>
+    <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->  
+    
+    
+    
+    <!--==========================================-->
+    <div class="container">
+        
+        <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+        <div class="content">
+            <h2 class="title">產品新增</h2>   
+            
+            <p>
+                <!--********************************************-->
+                <form role="form" method="get" action="/productAdd">			
+                    <div class="form-group">                     
+                        <label>產品編號(*)</label>
+                        <input type="text" class="form-control" name="proNo"/>
+                    </div>
+
+                    <div class="form-group">                     
+                        <label>產品名稱</label>
+                        <input type="text" class="form-control" name="proName"/>
+                    </div>                    
+
+                    <div class="form-group">                     
+                        <label>供應商編號(#)</label>  
+                        <select class="form-control" name="supNo">
+                            <% for(var i=0; i<supplierData.length; i++){ %>                     
+                                <option value="<%= supplierData[i].supNo %>"><%= (supplierData[i].supNo + " " + supplierData[i].supName) %></option>                                
+                            <% } %>                                                         
+                        </select>                       
+                    </div>
+
+                    <div class="form-group">                     
+                        <label>型態編號(#)</label>
+                        <select class="form-control" name="typNo">
+                            <% for(var i=0; i<proTypeData.length; i++){ %>                      
+                                <option value="<%= proTypeData[i].typNo %>"><%= (proTypeData[i].typNo + " " + proTypeData[i].typName) %></option>                                
+                            <% } %>                                                         
+                        </select>
+                    </div>
+
+
+                    <div class="form-group">                     
+                        <label>價格</label>
+                        <input type="number" class="form-control" name="price"/>
+                    </div>
+
+                    <div class="form-group">                     
+                        <label>庫存量</label>
+                        <input type="number" class="form-control" name="stockAmt"/>
+                    </div>
+
+                    <div class="form-group">                     
+                        <label>訂貨數量</label>
+                        <input type="number" class="form-control" name="orderAmt"/>
+                    </div>
+
+                    <div class="form-group">                     
+                        <label>安全存量</label>
+                        <input type="number" class="form-control" name="safeAmt"/>
+                    </div>
+
+                    <div class="form-group">                     
+                        <label>盤點日期</label>
+                        <div class="input-append date" id="dp3" data-date-format="yyyy/mm/dd">
+                            <input class="span2 form-control" type="text" name="inventoryDate">
+                            <span class="add-on"><i class="icon-th"></i></span>
+                        </div>  
+                    </div>                                                                                 
+
+                    <button type="submit" class="btn btn-default">
+                        新增
+                    </button>
+                </form>    
+                <!--********************************************-->
+            </p>	    
+        </div>    
+        <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->      
+        
+        
+        <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+        <div class="footer">
+            NTUB imd, 2017.    
+        </div>        
+        <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~--> 
+	
+    </div>
+    <!--==========================================-->  
+    <!--*********-->
+    <!-- 載入js  -->
+    <!--*********-->
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script> 
+    <script src="js/bootstrap.min.js"></script>	
+    <script src="js/myDropdownMenu.js"></script>
+ 	
+    <!------------------------>
+    <!-- 引用datepicker.js  -->
+    <!------------------------> 
+    <script src="js/bootstrap-datepicker.js"></script>
+    <script src="js/scripts.js"></script>   
+	
+    <!------------------------------->
+    <!-- 加入date picker設定       -->
+    <!------------------------------->
+    <script>
+    $( function() {
+        $('#dp3').datepicker();
+        
+        $('#dp3').on('changeDate', function(ev){
+            $(this).datepicker('hide');
+        });	
+    });     
+    </script>
+	
+       
+</body>
+</html>

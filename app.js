@@ -70,9 +70,20 @@ app.use('/', index);
 app.use('/users', users);
 
 app.get('/', function(req, res) {  
+    /*
     res.render('index', {  
      title: '首頁'
     });  
+    */
+   /*
+    if(req.cookies.islogin){
+        req.session.islogin=req.cookies.islogin;
+    }
+    if(req.session.islogin){
+        res.locals.islogin=req.session.islogin;
+    }
+    res.render('index', { title: 'HOME',test:res.locals.islogin});
+    */
 });  
 
 

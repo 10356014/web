@@ -18,15 +18,21 @@ router.post('/', function(req, res, next) {
         if (err){
             req.session.loginPass=false;
             req.session.empName=''; 
-            res.render('loginFail', {});     //登入失敗
+            res.locals.error = '使用者不存在';
+            res.render('loginForm',{});
+            return;
+            //res.render('loginFail', {});     //登入失敗
         }else if(rows.length==0){
             req.session.loginPass=false;
-            req.session.empName=''; 		
-            res.render('loginFail', {});     //登入失敗		
+            req.session.empName=''; 
+            res.locals.error = '使用者不存在';
+            res.render('loginForm',{});
+            return;		
+            //res.render('loginFail', {});     //登入失敗		
         }else{	
             req.session.loginPass=true;
             req.session.empName=rows[0].empName; 		
-            res.redirect('/loginSuccess');   //登入成功
+            res.redirect('/');   //登入成功
         }
     });
 });

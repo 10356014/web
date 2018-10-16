@@ -43,13 +43,13 @@ router.get('/', function(req, res, next) {
         startPage=startPage+navSegments;
     }
 
-    pool.query('select count(*) as cnt from robot', function(err, results) {
+    pool.query('select count(*) as cnt from match_robot', function(err, results) {
         if (err)throw err;
 
         var totalLine=results[0].cnt;
         var totalPage=Math.ceil(totalLine/linePerPage);
 
-        pool.query('select * from robot limit ?, ?',[(pageNo-1)*linePerPage, linePerPage], function(err, results) {
+        pool.query('select * from match_robot limit ?, ?',[(pageNo-1)*linePerPage, linePerPage], function(err, results) {
             if (err) {
                 res.render('robotNotFound', {});
             }

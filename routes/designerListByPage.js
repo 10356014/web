@@ -57,11 +57,11 @@ router.get('/', function(req, res, next) {
 
         pool.query('select * from designer limit ?, ?',[(pageNo-1)*linePerPage, linePerPage], function(err, results) {
             if (err) {
-                res.render('designerNotFound', {});
+                res.render('dataNotFound', {});
             }
 
             if(results.length==0){
-                res.render('designerNotFound', {});
+                res.render('dataNotFound', {});
             }else{
                 var recordNo=(pageNo-1)*linePerPage+1;
                 res.render('designerListByPage', {data:results, pageNo:pageNo, totalLine:totalLine, totalPage:totalPage, startPage:startPage, linePerPage:linePerPage, navSegments:navSegments, moment:moment});

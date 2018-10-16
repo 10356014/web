@@ -51,11 +51,11 @@ router.get('/', function(req, res, next) {
 
         pool.query('select * from store limit ?, ?',[(pageNo-1)*linePerPage, linePerPage], function(err, results) {
             if (err) {
-                res.render('storeNotFound', {});
+                res.render('dataNotFound', {});
             }
 
             if(results.length==0){
-                res.render('storeNotFound', {});
+                res.render('dataNotFound', {});
             }else{
                 var recordNo=(pageNo-1)*linePerPage+1;
                 res.render('storeListByPage', {data:results, pageNo:pageNo, totalLine:totalLine, totalPage:totalPage, startPage:startPage, linePerPage:linePerPage, navSegments:navSegments});

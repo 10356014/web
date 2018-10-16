@@ -11,20 +11,18 @@ var pool = require('./lib/db.js');
 /* GET home page. */
 router.get('/', function(req, res, next) {
     //取得使用者傳來的參數
-    var stoNo=req.param("stoNo");
-    var stoCity=req.param("stoCity");
-    var stoAddress=req.param("stoAddress");
-    var stoName=req.param("stoName");
-    
+    var robNo=req.param("robNo");
+    var robState=req.param("robState");
+    var match_stoNo=req.param("match_stoNo");
+	
     //建立一個新資料物件
     var newData={
-        stoNo:stoNo,
-        stoCity:stoCity,
-        stoAddress:stoAddress,
-        stoName:stoName
-    }	
+        robNo:robNo,
+        robState:robState,
+        match_stoNo:match_stoNo
+    }
 	
-    pool.query('INSERT INTO store SET ?', newData, function(err, rows, fields) {
+    pool.query('INSERT INTO match_robot SET ?', newData, function(err, rows, fields) {
         if (err){
             res.render('addFail', {});     //新增失敗
         }else{

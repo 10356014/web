@@ -33,8 +33,14 @@ var designerDelete = require('./routes/designerDelete');
 var designerNewDataForm = require('./routes/designerNewDataForm');
 var designerUpdate = require('./routes/designerUpdate');
 
-//機器人
+//機器人robot
 var robotListByPage = require('./routes/robotListByPage');
+var robotAddForm = require('./routes/robotAddForm');
+var robotAdd = require('./routes/robotAdd');
+var robotDelete = require('./routes/robotDelete');
+var robotNewDataForm = require('./routes/robotNewDataForm');
+var robotUpdate = require('./routes/robotUpdate');
+
 //打卡
 var attendanceListByPage = require('./routes/attendanceListByPage');
 
@@ -115,8 +121,14 @@ app.use('/designerNewDataForm', designerNewDataForm);
 app.use('/designerUpdate', designerUpdate);
 
 
-//機器人
+//機器人robot
 app.use('/robotListByPage', robotListByPage);
+app.use('/robotAddForm', robotAddForm);
+app.use('/robotAdd', robotAdd);
+app.use('/robotDelete', robotDelete);
+app.use('/robotNewDataForm', robotNewDataForm);
+app.use('/robotUpdate', robotUpdate);
+
 //打卡查詢
 app.use('/attendanceListByPage', attendanceListByPage);
 

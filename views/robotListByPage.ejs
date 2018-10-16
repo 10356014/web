@@ -42,6 +42,7 @@
     <!-- Sidebar menu-->
     <div class="app-sidebar__overlay" data-toggle="sidebar"></div>
     <aside class="app-sidebar">
+      
       <ul class="app-menu">
         <!--左邊欄位開始-->
         <!--首頁-->
@@ -62,11 +63,11 @@
           </ul>
         </li>
 
-        <!--管理小貝-->
-        <li class="treeview is-expanded"><a class="app-menu__item" href="#" data-toggle="treeview"><i class="app-menu__icon fa fa-th-list"></i><span class="app-menu__label">管理小貝</span><i class="treeview-indicator fa fa-angle-right"></i></a>
+        <!--管理機器人-->
+        <li class="treeview is-expanded"><a class="app-menu__item" href="#" data-toggle="treeview"><i class="app-menu__icon fa fa-th-list"></i><span class="app-menu__label">管理機器人</span><i class="treeview-indicator fa fa-angle-right"></i></a>
           <ul class="treeview-menu">
-              <li><a class="treeview-item active" href="/robotListByPage"><i class="icon fa fa-circle-o"></i> 查詢小貝</a></li>
-              <li><a class="treeview-item" href="table-data-table.html"><i class="icon fa fa-circle-o"></i> 新增小貝</a></li>
+              <li><a class="treeview-item active" href="/robotListByPage"><i class="icon fa fa-circle-o"></i> 管理機器人</a></li>
+              <li><a class="treeview-item" href="/robotAddForm"><i class="icon fa fa-circle-o"></i> 新增機器人</a></li>
           </ul>
         </li>
 
@@ -76,6 +77,7 @@
               <li><a class="treeview-item" href="/attendanceListByPage"><i class="icon fa fa-circle-o"></i> 查詢打卡資料</a></li>
           </ul>
         </li>
+        
 
       </ul> 
       <!--左邊欄位結束-->
@@ -92,6 +94,9 @@
                   <tr>
                     <th>機器人編號</th>
                     <th>機器人狀態</th>
+                    <th>配對店鋪</th>
+                    <th>更改</th>
+                    <th>刪除</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -106,7 +111,21 @@
                             <td>
                                 <%= data[i].robState %></a>
                             </td>  
-                                    
+                            <td>
+                              <%= data[i].match_stoNo %></a>
+                            </td> 
+                            <td>
+                              <form role="form" method="get" action="/robotNewDataForm">
+                                <input type="hidden" name="robNo" value="<%=data[i].robNo%>"/>
+                                <button class="btn btn-warning" type="submit">更改</button>
+                              </form>
+                            </td>     
+                            <td>
+                              <form  onsubmit="return confirm('是否確定刪除?');" role="form" action="/robotDelete">
+                                <input type="hidden" name="robNo" value="<%=data[i].robNo%>"/>
+                                <button class="btn btn-danger" type="submit">刪除</button>
+                              </form>
+                            </td>           
                         </tr> 
                     <% } %> 
                     <!------------------------------>

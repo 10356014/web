@@ -6,7 +6,7 @@ var mysql = require('mysql');
 /* GET home page. */
 router.get('/', function(req, res, next) {
     req.session.loginPass=false;
-    req.session.userNo=''; 	
+    req.session.empNo=''; 	
 	req.session.userName=''; 	
     res.render('loginForm', {});  
 });

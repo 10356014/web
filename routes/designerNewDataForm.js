@@ -8,9 +8,21 @@ var mysql = require('mysql');
 var pool = require('./lib/db.js');
 var moment = require('moment');
 
+//----------------------------------------------
+// 載入使用權檢查
+//----------------------------------------------
+var authorize = require('./lib/authorize.js');
+//----------------------------------------------
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
+	//------------------------------------------
+    // 如尚未登入, 轉至未登入頁面
+    //------------------------------------------
+    if(!authorize.isPass(req)){
+        res.render(authorize.illegalURL, {});
+        return;
+    }
 	var designerData;
 
 	//取得使用者輸入的理髮師編號

@@ -7,9 +7,23 @@ var mysql = require('mysql');
 //------------------
 var pool = require('./lib/db.js');
 
+//----------------------------------------------
+// 載入使用權檢查
+//----------------------------------------------
+var authorize = require('./lib/authorize.js');
+//----------------------------------------------
+
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
+    //------------------------------------------
+    // 如尚未登入, 轉至未登入頁面
+    //------------------------------------------
+    if(!authorize.isPass(req)){
+        res.render(authorize.illegalURL, {});
+        return;
+    }
+    
     //取得使用者傳來的參數
     var desNo=req.param("desNo");
     var desName=req.param("desName");
@@ -28,9 +42,9 @@ router.get('/', function(req, res, next) {
 	
     pool.query('INSERT INTO designer SET ?', newData, function(err, rows, fields) {
         if (err){
-            res.render('designerAddFail', {});     //新增失敗
+            res.render('addFail', {});     //新增失敗
         }else{
-            res.render('designerAddSuccess', {});  //新增成功
+            res.render('addSuccess', {});  //新增成功
         }
     });
 });

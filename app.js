@@ -11,12 +11,18 @@ var users = require('./routes/users');
 //-------------------------------------------------------
 // 增加以下的require
 //-------------------------------------------------------
+
 //登入
+var loginForm = require('./routes/loginForm');
+var login = require('./routes/login');
+var loginFail = require('./routes/loginFail');
+var logout = require('./routes/logout');
+/*
 var loginForm = require('./routes/loginForm');
 var login = require('./routes/login');
 var logout = require('./routes/logout');
 var loginSuccess = require('./routes/loginSuccess');
-
+*/
 //店鋪
 var storeListByPage = require('./routes/storeListByPage');
 var storeAddForm = require('./routes/storeAddForm');
@@ -72,16 +78,25 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+
+//---------------------------
+// 首頁設定為登入畫面
+//---------------------------
+app.use('/', loginForm);
+app.use('/', index);
+//-------------------------------------------------------
+// 增加以下的app.use()
+//-------------------------------------------------------
+app.use('/index', index);
+/*
 app.use('/', index);
 app.use('/users', users);
-
+*/
 app.get('/', function(req, res) {  
-    /*
+    
     res.render('index', {  
      title: '首頁'
     });  
-    */
-   /*
     if(req.cookies.islogin){
         req.session.islogin=req.cookies.islogin;
     }
@@ -89,19 +104,23 @@ app.get('/', function(req, res) {
         res.locals.islogin=req.session.islogin;
     }
     res.render('index', { title: 'HOME',test:res.locals.islogin});
-    */
+    
 });  
 
 
-//-------------------------------------------------------
-// 增加以下的app.use()
-//-------------------------------------------------------
-app.use('/', index);
+
 //登入
+app.use('/loginForm', loginForm);
+app.use('/login', login);
+app.use('/loginFail', loginFail);
+app.use('/logout', logout);
+/*
 app.use('/loginForm', loginForm);
 app.use('/login', login);
 app.use('/logout', logout);
 app.use('/loginSuccess', loginSuccess);
+*/
+
 
 //店鋪
 app.use('/storeListByPage', storeListByPage);

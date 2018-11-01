@@ -20,7 +20,7 @@ router.get('/', function(req, res, next) {
     //------------------------------------------
 
 	
-    res.render('loginSuccess', {empName:req.session.empName});
+    res.render('main', {userNo:req.session.userNo, userName:req.session.userName});
 });
 
 module.exports = router;
